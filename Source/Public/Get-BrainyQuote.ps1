@@ -1,7 +1,7 @@
 ﻿Function Get-BrainyQuote
 {
     <#
-    .SYNOPSIS
+    .SYNOPSIS 
         Get the quote of the day from BrainyQuote.com
     .PARAMETER Type
         You can select from the following quote categories:
