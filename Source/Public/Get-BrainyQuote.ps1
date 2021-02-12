@@ -18,6 +18,14 @@
                 a. Example: https://www.brainyquote.com/authors/a-boogie-wit-da-hoodie-quotes
                 b. Author name would be: a-boogie-wit-da-hoodie
             4. Put that into the Author parameter
+    .NOTES
+        Author:             Martin Pugh
+        Twitter:            @thesurlyadm1n
+        Spiceworks:         Martin9700
+        Blog:               www.thesurlyadmin.com
+      
+        Changelog:
+            2/11/21         Initial Release to PowerShellGallery
     #>
     [CmdletBinding(DefaultParameterSetName="type")]
     Param (
