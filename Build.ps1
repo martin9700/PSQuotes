@@ -44,7 +44,7 @@ Invoke-PSModuleBuild @ModuleInformation
 # Analyse source
 #
 Write-Verbose -Verbose -Message "$(Get-Date): Analyzing code"
-$Results = Invoke-ScriptAnalyzer -Path "$ENV:APPVEYOR_BUILD_FOLDER\$ModuleName" -Severity "Warning" -Recurse
+$Results = Invoke-ScriptAnalyzer -Path "$ENV:APPVEYOR_BUILD_FOLDER\Source" -Severity "Warning" -Recurse
 $Results | Format-Table
 
 $Errors = $Results | Where-Object Severity -eq "Error"
