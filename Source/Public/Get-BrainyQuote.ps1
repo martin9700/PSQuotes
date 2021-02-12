@@ -1,7 +1,7 @@
 ﻿Function Get-BrainyQuote
 {
     <#
-    .SYNOPSIS 
+    .SYNOPSIS
         Get the quote of the day from BrainyQuote.com
     .PARAMETER Type
         You can select from the following quote categories:
@@ -11,7 +11,7 @@
             Love
             Nature
     .PARAMETER Author
-        You can also get quotes from a favorite author. 
+        You can also get quotes from a favorite author.
             1. Go to: https://www.brainyquote.com/authors
             2. Click on your author
             3. Find the author name in the Address Bar
@@ -23,7 +23,7 @@
         Twitter:            @thesurlyadm1n
         Spiceworks:         Martin9700
         Blog:               www.thesurlyadmin.com
-      
+
         Changelog:
             2/11/21         Initial Release to PowerShellGallery
     #>

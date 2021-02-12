@@ -8,7 +8,7 @@
         Twitter:            @thesurlyadm1n
         Spiceworks:         Martin9700
         Blog:               www.thesurlyadmin.com
-      
+
         Changelog:
             2/11/21         Initial Release to PowerShellGallery
     #>
