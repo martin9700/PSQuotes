@@ -53,19 +53,27 @@ If ($Errors)
     Write-Error "$(Get-Date): One or more Script Analyzer errors/warnings where found. Build cannot continue!" -ErrorAction Stop
 }
 
-Write-Verbose "$(Get-Date): Script passed"
+Write-Verbose -Verbose -Message "$(Get-Date): Script passed"
 
 
 #
 # Run tests
 #
-$TestResults = Invoke-Pester -PassThru -OutputFormat NUnitXml -OutputFile ".\TestResults.xml"
-(New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",(Resolve-Path ".\TestResults.xml"))
-    
-If ($TestResults.FailedCount -gt 0)
+$TestsPath = Join-Path -Path "$ENV:APPVEYOR_BUILD_FOLDER\$ModuleName" -ChildPath Tests
+If (Test-Path -Path $TestsPath)
 {
-    $TestResults | Format-List *
-    Write-Error "$(Get-Date): Failed '$($TestResults.FailedCount)' tests, build failed" -ErrorAction Stop
+    $TestResults = Invoke-Pester -PassThru -OutputFormat NUnitXml -OutputFile ".\TestResults.xml"
+    (New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",(Resolve-Path ".\TestResults.xml"))
+    
+    If ($TestResults.FailedCount -gt 0)
+    {
+        $TestResults | Format-List *
+        Write-Error "$(Get-Date): Failed '$($TestResults.FailedCount)' tests, build failed" -ErrorAction Stop
+    }
+}
+Else
+{
+    Write-Verbose -Verbose -Message "$(Get-Date): No tests detected, skipping"
 }
 
 
