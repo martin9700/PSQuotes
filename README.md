@@ -13,8 +13,8 @@ I haven't pushed this to the PSGallery so installation is manual.
 
 
 ## Usage
-Get-DadJoke
+* Get-DadJoke
 
-Get-BrainyQuote
-Get-BrainyQuote Funny
-Get-BrainyQuote Nature
+* Get-BrainyQuote
+* Get-BrainyQuote Funny
+* Get-BrainyQuote Nature
