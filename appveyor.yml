@@ -2,7 +2,7 @@ image: WMF 5
 
 branches:
     only:
-        - master
+        - main
 
 environment:
   PSGalleryAPIKey:
