@@ -1,15 +1,4 @@
-﻿Function Get-DadJoke
-{
-    <#
-    .SYNOPSIS
-        Random Dad joke
-    #>
-	Invoke-RestMethod -Uri "https://icanhazdadjoke.com" -Headers @{accept="application/json"} |
-		Select-Object -ExpandProperty Joke
-}
-
-
-Function Get-BrainyQuote
+﻿Function Get-BrainyQuote
 {
     <#
     .SYNOPSIS
@@ -22,13 +11,21 @@ Function Get-BrainyQuote
             Love
             Nature
     .PARAMETER Author
-        You can also get quotes from a favorite author. 
+        You can also get quotes from a favorite author.
             1. Go to: https://www.brainyquote.com/authors
             2. Click on your author
             3. Find the author name in the Address Bar
                 a. Example: https://www.brainyquote.com/authors/a-boogie-wit-da-hoodie-quotes
                 b. Author name would be: a-boogie-wit-da-hoodie
             4. Put that into the Author parameter
+    .NOTES
+        Author:             Martin Pugh
+        Twitter:            @thesurlyadm1n
+        Spiceworks:         Martin9700
+        Blog:               www.thesurlyadmin.com
+
+        Changelog:
+            2/11/21         Initial Release to PowerShellGallery
     #>
     [CmdletBinding(DefaultParameterSetName="type")]
     Param (
@@ -67,4 +64,3 @@ Function Get-BrainyQuote
         Write-Output $Quote
     }
 }
-
